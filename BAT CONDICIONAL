@@ -15,7 +15,7 @@
  	echo ------------------------------
  	if %opcao% equ 1 goto one
  	if %opcao% equ 2 goto two
-    if %opcao% equ 2 goto three
+    if %opcao% equ 3 goto three
  	 
  	:one
  	pause
