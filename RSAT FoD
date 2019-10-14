@@ -1,0 +1,4 @@
+Get-WindowsCapability -Name RSAT* -Online | Add-WindowsCapability -Online
+
+Fonte:
+https://www.virtualizationhowto.com/2019/07/download-windows-10-1809-1903-rsat-install-using-new-windows-fod/
