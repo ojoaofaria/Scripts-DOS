@@ -1,0 +1,5 @@
+ROBOCOPY \\caminho_do_seu_arquivo %USERPROFILE%\Documents\protheus_v12 /E /SEC
+
+xcopy "\\caminho_do_seu_arquivo\ProtheusV12.lnk" "%USERPROFILE%\Desktop"
+
+attrib %USERPROFILE%\Desktop\ProtheusV12.lnk -H
