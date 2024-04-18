@@ -3,3 +3,20 @@ ROBOCOPY \\renovaenergia\NETLOGON\Applications\protheus\producao %USERPROFILE%\D
 xcopy "\\renovaenergia\NETLOGON\Applications\protheus\producao\ProtheusV12.lnk" "%USERPROFILE%\Desktop"
 
 attrib %USERPROFILE%\Desktop\ProtheusV12.lnk -H
+
+robocopy e: f: /E /Z /COPYALL /ETA /R:0 /W:0 /xf pagefile.sys /xf *.wma /xf *.wav /xf *.mp3 /xf *.wmv /xf *.vob /xf *.mpg /xf *.mkv /xf *.avi /xf *.mp4 /xf *.inf /xf *.cmd /xf *.com /xd "System Volume Information" /xd /LOG:c:\copia.txt /TEE
+
+/E : Sub diretorio e os sub diretorios vazios
+/Z: Modo backup do arquivo, faz copia incremental
+/COPYALL: Copia permissões NTFS
+/ETA: Estimativa de Copia
+/R : Tentativas da copia do arquivo
+/W : Tempo em espera em segundos
+/xf : Arquivos e Extensões que não seram copiadas
+/xd : Diretório que não será copiado.
+/LOG: Local onde será gerado o log da copia.
+/TEE; Mostra o resultando do comando na janela de console e no arquivo de log.
+
+– No inicio do comando as letras e: e f: ( unidade origem dos arquivos a serem copiados e unidade de destino da copia dos arquivos )
+– As extensões adicionadas no comando podem variar dependendo de cada caso a ser analisado, pois muitas vezes não queremos levar “lixo”, na hora da migração para novo file server.
+– Após realiza a copia dos arquivos, você pode rodar este comando novamente, que neste momento só será feita a copia dos arquivos que foram alterados.
